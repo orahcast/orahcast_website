@@ -43,8 +43,8 @@ export default function Footer() {
             <Image
               src="/Orahcast logo2 without background.png"
               alt="OrahCast Logo"
-              width={580}
-              height={150}
+              width={200}
+              height={52}
               className="h-[60px] w-auto"
             />
           </Link>
@@ -79,9 +79,9 @@ export default function Footer() {
             <Image
               src="/Orahcast logo2 without background.png"
               alt="OrahCast Logo"
-              width={580}
-              height={150}
-              style={{ height: '80px', width: 'auto' }}
+              width={200}
+              height={52}
+              style={{ height: '50px', width: 'auto' }}
             />
           </Link>
 

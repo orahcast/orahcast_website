@@ -69,8 +69,8 @@ export default function Header() {
               <Image
                 src="/Orahcast logo2 without background.png"
                 alt="OrahCast Logo"
-                width={200}
-                height={52}
+                width={240}
+                height={72}
                 priority
                 className="h-[40px] md:h-[48px] w-auto"
               />
