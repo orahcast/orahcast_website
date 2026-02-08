@@ -1,15 +1,42 @@
+/**
+ * Root Layout
+ * 
+ * Main layout component for the OrahCast website.
+ * Configures fonts (Space Grotesk, Space Mono, Noto Sans) and metadata.
+ */
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Space_Mono, Noto_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/**
+ * Display font - Space Grotesk
+ * Used for headings and prominent text
+ */
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+/**
+ * Monospace font - Space Mono
+ * Used for labels, tags, and code-like text
+ */
+const spaceMono = Space_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+/**
+ * Body font - Noto Sans
+ * Used for body text and descriptions
+ */
+const notoSans = Noto_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 /**
@@ -44,8 +71,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Material Symbols for icons */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${spaceMono.variable} ${notoSans.variable} antialiased bg-white text-neutral-900 font-sans overflow-x-hidden`}
+        style={{ fontFamily: 'var(--font-display), "Space Grotesk", sans-serif' }}
       >
         {children}
       </body>

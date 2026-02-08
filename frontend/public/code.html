@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OrahCast Integrated Landing Page</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1313ec",
+                        "background-light": "#ffffff","background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Space Mono", "monospace"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light text-neutral-900 font-display overflow-x-hidden transition-colors duration-200">
+<div class="relative flex min-h-screen flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-neutral-100 bg-white/90 backdrop-blur-md">
+<div class="flex items-center justify-between px-6 py-4 lg:px-20 max-w-[1280px] mx-auto w-full">
+<div class="flex items-center gap-4 text-neutral-900">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">OrahCast</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<nav class="flex gap-8">
+<a class="text-sm font-medium text-neutral-600 hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-primary" href="#">Services</a>
+<a class="text-sm font-medium text-neutral-600 hover:text-primary transition-colors" href="#">Projects</a>
+<a class="text-sm font-medium text-neutral-600 hover:text-primary transition-colors" href="#">About</a>
+</nav>
+<button class="bg-primary hover:bg-blue-700 text-white text-sm font-bold rounded-lg h-10 px-6 transition-all shadow-lg shadow-primary/25">
+                        Get a Quote
+                    </button>
+</div>
+<div class="md:hidden text-neutral-900">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center">
+<section class="w-full relative px-6 py-20 lg:py-32 lg:px-20 border-b border-neutral-100 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none"></div>
+<div class="max-w-[1280px] mx-auto w-full relative z-10">
+<div class="flex flex-col gap-16">
+<div class="max-w-4xl">
+<h1 class="text-6xl md:text-8xl font-bold tracking-tight text-neutral-900 leading-[0.9]">
+                                Illuminating Data.<br/>
+<span class="text-primary font-light italic">Forecasting the Future.</span>
+</h1>
+</div>
+<div class="grid md:grid-cols-2 gap-12 lg:gap-24 pt-8 border-t border-neutral-200">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary">visibility</span>
+<h3 class="text-sm font-mono font-bold uppercase tracking-widest text-neutral-400">Our Vision</h3>
+</div>
+<p class="text-2xl font-medium text-neutral-900 leading-tight">
+                                    To define the horizon of technical leadership by transforming complexity into clarity.
+                                </p>
+<p class="text-neutral-600 leading-relaxed max-w-md">
+                                    We see a world where data isn't just stored, but speaks. Our vision is to pioneer the next generation of intelligent systems that don't just react, but anticipate.
+                                </p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary">rocket_launch</span>
+<h3 class="text-sm font-mono font-bold uppercase tracking-widest text-neutral-400">Our Mission</h3>
+</div>
+<p class="text-2xl font-medium text-neutral-900 leading-tight">
+                                    Empowering modern enterprises with scalable, future-proof digital architectures.
+                                </p>
+<p class="text-neutral-600 leading-relaxed max-w-md">
+                                    We bridge the gap between ambitious ideas and technical execution. Through rigorous engineering and strategic foresight, we build the foundations for your sustainable growth.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full max-w-[1280px] px-6 py-12 md:py-20 lg:px-20">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-neutral-200 pb-12">
+<div class="flex flex-col gap-4 max-w-2xl">
+<p class="text-primary font-mono text-sm tracking-widest uppercase font-bold">Services &amp; Projects</p>
+<h2 class="text-5xl md:text-7xl font-black leading-tight tracking-tight text-neutral-900">
+                            Engineering <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">The Future</span>
+</h2>
+</div>
+<div class="max-w-md pb-2">
+<p class="text-neutral-600 text-lg leading-relaxed">
+                            We deploy high-performance technical teams to build scalable solutions. From strategic consulting to full-stack execution.
+                        </p>
+</div>
+</div>
+</section>
+<section class="w-full max-w-[1280px] px-6 lg:px-20 pb-16">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+<div class="flex flex-col gap-2 p-6 rounded-xl bg-white border border-neutral-100 shadow-sm">
+<p class="text-neutral-500 text-sm font-mono uppercase">Delivered</p>
+<p class="text-3xl md:text-4xl font-bold text-neutral-900">150<span class="text-primary">+</span></p>
+</div>
+<div class="flex flex-col gap-2 p-6 rounded-xl bg-white border border-neutral-100 shadow-sm">
+<p class="text-neutral-500 text-sm font-mono uppercase">Retention</p>
+<p class="text-3xl md:text-4xl font-bold text-neutral-900">98<span class="text-primary">%</span></p>
+</div>
+<div class="flex flex-col gap-2 p-6 rounded-xl bg-white border border-neutral-100 shadow-sm">
+<p class="text-neutral-500 text-sm font-mono uppercase">Experience</p>
+<p class="text-3xl md:text-4xl font-bold text-neutral-900">10<span class="text-primary">+</span> Yrs</p>
+</div>
+<div class="flex flex-col gap-2 p-6 rounded-xl bg-white border border-neutral-100 shadow-sm">
+<p class="text-neutral-500 text-sm font-mono uppercase">Partners</p>
+<p class="text-3xl md:text-4xl font-bold text-neutral-900">25<span class="text-primary">+</span></p>
+</div>
+</div>
+</section>
+<section class="w-full max-w-[1280px] px-6 lg:px-20 pb-20">
+<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-4">
+<h2 class="text-3xl font-bold text-neutral-900">Core Capabilities</h2>
+<p class="text-neutral-600 max-w-2xl">
+                            Our multidisciplinary teams integrate seamlessly with your organization to tackle complex challenges.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group relative flex flex-col gap-6 rounded-xl border border-neutral-200 bg-white p-8 transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5 overflow-hidden">
+<div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/5 blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-4xl text-primary">devices</span>
+<span class="font-mono text-xs text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity">01_DEV</span>
+</div>
+<div class="flex flex-col gap-3 relative z-10">
+<h3 class="text-xl font-bold text-neutral-900 group-hover:text-primary transition-colors">Web &amp; Mobile Engineering</h3>
+<p class="text-neutral-600 text-sm leading-relaxed font-body">
+                                    Full-cycle development for high-scale web applications and native mobile experiences. We focus on performance, accessibility, and clean architecture.
+                                </p>
+</div>
+<div class="mt-auto pt-4 border-t border-neutral-100 flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">React</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">Next.js</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">Flutter</span>
+</div>
+</div>
+<div class="group relative flex flex-col gap-6 rounded-xl border border-neutral-200 bg-white p-8 transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-purple-500/5 overflow-hidden">
+<div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-purple-500/5 blur-3xl group-hover:bg-purple-500/10 transition-colors"></div>
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-4xl text-purple-500">smart_toy</span>
+<span class="font-mono text-xs text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity">02_AI</span>
+</div>
+<div class="flex flex-col gap-3 relative z-10">
+<h3 class="text-xl font-bold text-neutral-900 group-hover:text-purple-500 transition-colors">AI &amp; Machine Learning</h3>
+<p class="text-neutral-600 text-sm leading-relaxed font-body">
+                                    Custom model development, NLP pipelines, and computer vision solutions. Transform raw data into predictive insights and automated workflows.
+                                </p>
+</div>
+<div class="mt-auto pt-4 border-t border-neutral-100 flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">Python</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">TensorFlow</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">OpenAI</span>
+</div>
+</div>
+<div class="group relative flex flex-col gap-6 rounded-xl border border-neutral-200 bg-white p-8 transition-all hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/5 overflow-hidden">
+<div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-cyan-500/5 blur-3xl group-hover:bg-cyan-500/10 transition-colors"></div>
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-4xl text-cyan-500">cloud_queue</span>
+<span class="font-mono text-xs text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity">03_OPS</span>
+</div>
+<div class="flex flex-col gap-3 relative z-10">
+<h3 class="text-xl font-bold text-neutral-900 group-hover:text-cyan-500 transition-colors">Cloud &amp; DevOps</h3>
+<p class="text-neutral-600 text-sm leading-relaxed font-body">
+                                    Infrastructure as Code (IaC), CI/CD optimization, and cloud-native architecture. We ensure your systems are resilient, secure, and scalable.
+                                </p>
+</div>
+<div class="mt-auto pt-4 border-t border-neutral-100 flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">AWS</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">Kubernetes</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">Terraform</span>
+</div>
+</div>
+<div class="group relative flex flex-col gap-6 rounded-xl border border-neutral-200 bg-white p-8 transition-all hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-500/5 overflow-hidden">
+<div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-500/5 blur-3xl group-hover:bg-orange-500/10 transition-colors"></div>
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-4xl text-orange-500">handshake</span>
+<span class="font-mono text-xs text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity">04_STRAT</span>
+</div>
+<div class="flex flex-col gap-3 relative z-10">
+<h3 class="text-xl font-bold text-neutral-900 group-hover:text-orange-500 transition-colors">Strategic Consulting</h3>
+<p class="text-neutral-600 text-sm leading-relaxed font-body">
+                                    Technical leadership on demand. We assist with roadmap planning, legacy modernization strategies, and CTO-level advisory services.
+                                </p>
+</div>
+<div class="mt-auto pt-4 border-t border-neutral-100 flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">Roadmap</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">Audit</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">Architecture</span>
+</div>
+</div>
+<div class="group relative flex flex-col gap-6 rounded-xl border border-neutral-200 bg-white p-8 transition-all hover:border-green-500/50 hover:shadow-2xl hover:shadow-green-500/5 overflow-hidden">
+<div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-green-500/5 blur-3xl group-hover:bg-green-500/10 transition-colors"></div>
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-4xl text-green-500">trending_up</span>
+<span class="font-mono text-xs text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity">05_GROWTH</span>
+</div>
+<div class="flex flex-col gap-3 relative z-10">
+<h3 class="text-xl font-bold text-neutral-900 group-hover:text-green-500 transition-colors">Product Growth</h3>
+<p class="text-neutral-600 text-sm leading-relaxed font-body">
+                                    Data-driven engineering to improve user acquisition and retention. We build analytics loops and A/B testing frameworks directly into your product.
+                                </p>
+</div>
+<div class="mt-auto pt-4 border-t border-neutral-100 flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">Analytics</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">A/B Testing</span>
+<span class="px-2 py-1 rounded bg-neutral-100 text-xs font-mono text-neutral-600">CRO</span>
+</div>
+</div>
+<div class="group relative flex flex-col gap-6 rounded-xl border border-dashed border-neutral-300 bg-transparent p-8 items-center justify-center text-center hover:bg-neutral-50 transition-colors">
+<div class="size-12 rounded-full bg-neutral-100 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-2xl text-neutral-500">add</span>
+</div>
+<h3 class="text-xl font-bold text-neutral-900">Custom Solution?</h3>
+<p class="text-neutral-600 text-sm leading-relaxed font-body">
+                                Need something specific? Let's engineer a solution tailored to your unique requirements.
+                            </p>
+<button class="text-primary font-bold text-sm mt-2 hover:underline">Talk to us</button>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full max-w-[1280px] px-6 lg:px-20 pb-24">
+<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-4">
+<h2 class="text-3xl font-bold text-neutral-900">Featured Projects</h2>
+<p class="text-neutral-600 max-w-2xl">
+                            Showcasing our impact across industries through successful digital transformations.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group cursor-pointer flex flex-col gap-4">
+<div class="overflow-hidden rounded-xl bg-neutral-50 shadow-sm hover:shadow-xl hover:shadow-neutral-200/50 transition-all duration-500 aspect-[4/3] relative">
+<img alt="Fintech Dashboard" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter grayscale-[20%] group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxlp8ZvPpp6HWaeLt2WxOeRM2bCk1FvuZ7VAUTlC4j73e5RonySKgBtApIyfCyV8jRj0RDUI6Snr4UhJrWRTSQI9T4uQdNATh5TAd5Z9mmyqmPZERDYuxCi6J9swLmhd8ZYNeJMyEx9NGvbfBtxEW_1UUJXMTfsQ-mlouImGMctBLSnZIJg9w1wJSgswidc_liRrI9hDjZhw2EtvbaeenrNXY8VnRcjwpBt3A0OnOJonuMKJnS0Disx5aA_GuhuR5WC0yWCnd_9tFo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded-full border border-neutral-200 text-[10px] font-mono uppercase font-medium tracking-wide text-neutral-500">Fintech</span>
+<span class="px-2 py-0.5 rounded-full border border-neutral-200 text-[10px] font-mono uppercase font-medium tracking-wide text-neutral-500">Big Data</span>
+</div>
+<h3 class="text-xl font-bold text-neutral-900 group-hover:text-primary transition-colors">Nova Financial Analytics</h3>
+</div>
+</div>
+<div class="group cursor-pointer flex flex-col gap-4">
+<div class="overflow-hidden rounded-xl bg-neutral-50 shadow-sm hover:shadow-xl hover:shadow-neutral-200/50 transition-all duration-500 aspect-[4/3] relative">
+<img alt="AI Neural Network Chip" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter grayscale-[20%] group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcqz4q2nMUaOyjPHpGtFbQdKl2JoSXY4fqsJUpMM6Suv6K6kDWx5-ghsRNlh4rH-LAVgqRVWtLWvEqzxh8DeV-ld152ZJnh9kVyNZ_2iqeQQfqeMccS3ZcrXOiJ04xEUlw_RAQwn4evsTq4TFEUyzskkTqKPaSSfeIIBn9ZmGVeND26SKOv2QnAU0q3uDqav8_3-CRDXr85GnSTHSpA9-igbQOsARoM16BSAXRH_cW3TQ3a-EErxYSpZUjIG08Zy3OV1ugt-aykoV1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded-full border border-neutral-200 text-[10px] font-mono uppercase font-medium tracking-wide text-neutral-500">AI</span>
+<span class="px-2 py-0.5 rounded-full border border-neutral-200 text-[10px] font-mono uppercase font-medium tracking-wide text-neutral-500">Healthcare</span>
+</div>
+<h3 class="text-xl font-bold text-neutral-900 group-hover:text-primary transition-colors">MediScan Diagnostic AI</h3>
+</div>
+</div>
+<div class="group cursor-pointer flex flex-col gap-4">
+<div class="overflow-hidden rounded-xl bg-neutral-50 shadow-sm hover:shadow-xl hover:shadow-neutral-200/50 transition-all duration-500 aspect-[4/3] relative">
+<img alt="Mobile App Interface" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter grayscale-[20%] group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2m_8_gb-g1mu5rpdx0HdxkYk1EJ73pF1DUe0tcQc2hfBHQzUhXdpTeZOyUrN9oawJrGzDiZlryZY5qFfYcBepdBu2gNx0rD3Lfc3GSe2ZNeuffq4-jRnbsVcG765Jd4kACIMr1wtygLPuB5oNCJVEkqUdr5qGonTxfV0mH7ZmoM6fbJaxQWFvEsy-KKozQ3UUcijXMspkdrzS4gU1moe8vG9wknBVFctlypC1zTOmv1uZV1mitos1vNgLBNnyIgR1e6ZlGDSBaqJ4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded-full border border-neutral-200 text-[10px] font-mono uppercase font-medium tracking-wide text-neutral-500">Mobile</span>
+<span class="px-2 py-0.5 rounded-full border border-neutral-200 text-[10px] font-mono uppercase font-medium tracking-wide text-neutral-500">Consumer</span>
+</div>
+<h3 class="text-xl font-bold text-neutral-900 group-hover:text-primary transition-colors">Echo Lifestyle App</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full mt-auto relative overflow-hidden bg-[#101018]">
+<div class="absolute inset-0 z-0 opacity-40" data-alt="Abstract dot pattern background" style="background-image: radial-gradient(#1313ec 1px, transparent 1px); background-size: 32px 32px;">
+</div>
+<div class="relative z-10 w-full max-w-[1280px] mx-auto px-6 py-20 lg:px-20 lg:py-32 flex flex-col items-center text-center gap-8">
+<h2 class="text-4xl md:text-5xl font-black text-white tracking-tight max-w-3xl">
+                        Ready to build something <span class="text-primary">great</span>?
+                    </h2>
+<p class="text-neutral-400 text-lg max-w-2xl font-body">
+                        Let's discuss how OrahCast can accelerate your digital transformation with our expert engineering teams.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+<button class="bg-primary hover:bg-blue-600 text-white text-base font-bold rounded-lg h-12 px-8 transition-all shadow-xl shadow-primary/30 min-w-[200px]">
+                            Schedule Consultation
+                        </button>
+<button class="bg-transparent hover:bg-white/5 border border-neutral-700 text-white text-base font-bold rounded-lg h-12 px-8 transition-all min-w-[200px]">
+                            View Case Studies
+                        </button>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-neutral-200 bg-white py-12">
+<div class="w-full max-w-[1280px] mx-auto px-6 lg:px-20 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-neutral-900">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-sm font-bold">OrahCast</span>
+</div>
+<p class="text-neutral-500 text-sm">© 2024 OrahCast Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-neutral-500 hover:text-primary transition-colors text-sm" href="#">Privacy</a>
+<a class="text-neutral-500 hover:text-primary transition-colors text-sm" href="#">Terms</a>
+<a class="text-neutral-500 hover:text-primary transition-colors text-sm" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

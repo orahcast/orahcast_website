@@ -18,7 +18,8 @@ export default function HeroSection() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight">
             Illuminating Data.
             <br />
-            <span className="italic text-purple-500">Forecasting the</span>
+            <span className="italic text-purple-500">Forecasting a </span>
+            <span className="italic text-purple-500">Bright</span>
             <br />
             <span className="italic text-purple-500">Future.</span>
           </h1>
