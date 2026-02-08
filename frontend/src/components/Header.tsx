@@ -65,14 +65,14 @@ export default function Header() {
         <nav className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-20 h-16 md:h-20">
           <div className="flex items-center justify-between h-full">
             {/* Logo - responsive sizing */}
-            <Link href="/" className="flex items-center -ml-8 md:-ml-20 flex-shrink-0">
+            <Link href="/" className="flex items-center flex-shrink-0">
               <Image
                 src="/Orahcast logo2 without background.png"
                 alt="OrahCast Logo"
-                width={580}
-                height={150}
+                width={200}
+                height={52}
                 priority
-                className="h-[120px] md:h-[200px] w-auto"
+                className="h-[40px] md:h-[48px] w-auto"
               />
             </Link>
 
