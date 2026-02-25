@@ -1,44 +1,38 @@
 /**
  * Home Page
- * 
- * Main landing page for OrahCast website.
- * Assembles all section components into a cohesive page layout.
+ *
+ * Section order: Hero → Capabilities → Projects → Mission/Vision → Contact → Footer
  */
 
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import CTASection from "@/components/CTASection";
+import MissionSection from "@/components/MissionSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
-/**
- * Home page component
- * Renders the complete landing page with all sections
- */
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation Header */}
       <Header />
 
-      {/* Main Content */}
       <main>
-        {/* Hero Section - Main tagline and mission */}
+        {/* Hero — Headline & CTA */}
         <HeroSection />
 
-        {/* Services Overview with Statistics */}
-        <ServicesSection />
-
-        {/* Core Capabilities Grid */}
+        {/* Core Capabilities — 6-card grid */}
         <CapabilitiesSection />
 
-        {/* Featured Projects Showcase */}
+        {/* Projects — Portfolio showcase */}
         <ProjectsSection />
 
-        {/* Call to Action */}
-        <CTASection />
+        {/* Mission & Vision */}
+        <MissionSection />
+
+        {/* Contact — Email & Phone */}
+        <ContactSection />
       </main>
 
       {/* Site Footer */}
