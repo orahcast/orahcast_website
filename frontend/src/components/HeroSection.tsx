@@ -1,8 +1,8 @@
 /**
  * HeroSection Component
  *
- * Landing hero with logo-blue + gray headline, updated description,
- * and two CTA buttons.
+ * Landing hero with logo-blue + gray headline, animated dot grid,
+ * floating dots, and two CTA buttons.
  */
 
 import Link from "next/link";
@@ -13,28 +13,24 @@ export default function HeroSection() {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-20 pb-24 overflow-hidden bg-white"
     >
-      {/* Background decorations */}
+      {/* Soft radial glow — top left */}
       <div
-        className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none animate-orb-1"
         style={{
-          background:
-            "radial-gradient(circle, rgba(19,19,236,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(19,19,236,0.07) 0%, transparent 70%)",
         }}
       />
+      {/* Soft radial glow — bottom right */}
       <div
-        className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
+        className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none animate-orb-2"
         style={{
-          background:
-            "radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 70%)",
         }}
       />
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: "radial-gradient(#1313ec 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
+
+
+
+
 
       <div className="relative z-10 section-container w-full flex flex-col items-center text-center">
         {/* Label pill */}
@@ -50,22 +46,18 @@ export default function HeroSection() {
 
         {/* Main headline */}
         <h1 className="animate-fade-up-delay-1 text-[clamp(2.4rem,5.5vw,4.2rem)] font-black leading-[1.1] tracking-tight mb-5 max-w-3xl">
-          {/* "Illuminating" — logo blue */}
           <span style={{ color: "#1313ec" }}>Illuminating</span>{" "}
-          {/* "Data." — logo blue */}
           <span style={{ color: "#1313ec" }}>Data.</span>
           <br />
-          {/* "Forecasting a" — neutral gray */}
           <span className="font-semibold italic" style={{ color: "#94a3b8" }}>
             Forecasting a
           </span>{" "}
-          {/* "Bright Future." — medium gray */}
           <span className="italic" style={{ color: "#64748b" }}>
             Bright Future.
           </span>
         </h1>
 
-        {/* Description — simple and service-focused */}
+        {/* Description */}
         <p className="animate-fade-up-delay-2 text-base md:text-lg text-neutral-500 max-w-xl leading-relaxed mb-10 font-body">
           We build web &amp; mobile apps, AI solutions, cloud infrastructure,
           and data systems — tailored for startups and enterprises ready to scale.
