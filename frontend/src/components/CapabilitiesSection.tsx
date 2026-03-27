@@ -82,7 +82,7 @@ const CAPABILITIES: Capability[] = [
 
 export default function CapabilitiesSection() {
   return (
-    <section className="w-full max-w-[1280px] mx-auto px-6 lg:px-20 pb-24">
+    <section id="services" className="w-full max-w-[1280px] mx-auto px-6 lg:px-20 pb-24">
       {/* Section Header */}
       <div className="flex flex-col gap-3 mb-12">
         <p

@@ -63,7 +63,7 @@ export default function ContactSection() {
                 </div>
 
                 {/* Contact Cards */}
-                <div className="grid sm:grid-cols-2 gap-6 max-w-2xl">
+                <div className="grid sm:grid-cols-3 gap-6 max-w-4xl">
                     {/* Email */}
                     <Link
                         href="mailto:orahcast@gmail.com"
@@ -146,6 +146,45 @@ export default function ContactSection() {
                             </p>
                             <p className="text-sm text-neutral-500 mt-1">
                                 Mon – Fri, 8am – 6pm SAST
+                            </p>
+                        </div>
+                    </Link>
+
+                    {/* WhatsApp */}
+                    <Link
+                        href="https://wa.me/250782157887?text=Hello%2C%20I%20want%20to%20work%20with%20you%20on%20a%20project%3A%20"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-start gap-5 bg-white rounded-2xl p-7 border border-neutral-100 hover:border-[#25D366]/30 hover:shadow-lg transition-all duration-300"
+                        style={{ textDecoration: "none" }}
+                    >
+                        {/* Icon */}
+                        <div
+                            className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                            style={{ backgroundColor: "rgba(37,211,102,0.08)" }}
+                        >
+                            <svg
+                                className="w-6 h-6"
+                                fill="#25D366"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M12.031 0C5.383 0 0 5.385 0 12.036c0 2.128.553 4.2 1.606 6.03L.085 23.58a.493.493 0 00.617.62l5.656-1.488a11.986 11.986 0 005.673 1.423 12.035 12.035 0 0012.031-12.034C24.062 5.385 18.679 0 12.031 0zm0 22.09c-1.849 0-3.666-.484-5.26-1.402l-.377-.218-3.929 1.034 1.054-3.834-.239-.384a10.007 10.007 0 01-1.531-5.32c0-5.55 4.516-10.066 10.066-10.066 5.55 0 10.066 4.516 10.066 10.066 0 5.55-4.516 10.066-10.066 10.066zm5.525-7.53c-.303-.152-1.794-.886-2.072-.987-.278-.101-.482-.152-.684.152-.202.304-.783.987-.96 1.19-.177.203-.355.228-.658.076-1.398-.7-2.457-1.366-3.411-2.903-.177-.282-.019-.434.133-.585.136-.135.303-.355.455-.532.152-.178.203-.304.304-.507.101-.203.05-.38-.025-.532-.076-.152-.684-1.648-.937-2.256-.247-.59-.497-.509-.684-.518-.178-.01-.38-.01-.582-.01-.203 0-.532.076-.811.38-.278.304-1.063 1.039-1.063 2.534 0 1.495 1.089 2.94 1.24 3.143.152.203 2.144 3.275 5.196 4.593.726.314 1.292.502 1.733.642.729.232 1.393.199 1.916.12.585-.088 1.794-.733 2.047-1.442.253-.709.253-1.317.177-1.443-.076-.126-.278-.202-.582-.354z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p
+                                className="font-mono text-xs tracking-widest uppercase font-bold mb-1"
+                                style={{ color: "#25D366" }}
+                            >
+                                Chat on WhatsApp
+                            </p>
+                            <p
+                                className="text-lg font-bold text-neutral-900 group-hover:text-[#25D366] transition-colors duration-200"
+                            >
+                                Message Us
+                            </p>
+                            <p className="text-sm text-neutral-500 mt-1">
+                                Instant replies
                             </p>
                         </div>
                     </Link>

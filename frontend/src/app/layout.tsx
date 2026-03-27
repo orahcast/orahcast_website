@@ -7,6 +7,7 @@
 
 import type { Metadata } from "next";
 import { Space_Grotesk, Space_Mono, Noto_Sans } from "next/font/google";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import "./globals.css";
 
 /**
@@ -83,6 +84,7 @@ export default function RootLayout({
         style={{ fontFamily: 'var(--font-display), "Space Grotesk", sans-serif' }}
       >
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );
