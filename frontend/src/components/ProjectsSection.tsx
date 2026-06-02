@@ -2,6 +2,14 @@
 
 const PROJECTS = [
   {
+    id: "blessedirembo",
+    title: "Blessedirembo",
+    description:
+      "Operating under Blessed HealthConnect Ltd, Blessed Irembo connects you with verified pharmacies nationwide. Search by location, check availability, and get the medication you need, when you need it.",
+    href: "https://www.blessedirembo.com/",
+    image: "/projects/blessedirembo.jpg",
+  },
+  {
     id: "nest-africa-travels",
     title: "Nest Africa Travels Ltd",
     description:
@@ -16,14 +24,6 @@ const PROJECTS = [
       "AI-powered platform predicting SME success for Rwandan businesses — 93.5% accuracy, real-time risk and growth analysis.",
     href: "",
     image: "/projects/sme-predictor.png",
-  },
-  {
-    id: "echo-lifestyle",
-    title: "Echo Lifestyle App",
-    description:
-      "Habit-forming wellness app built to help users track, build, and sustain healthy daily routines.",
-    href: "",
-    image: "",
   },
 ];
 

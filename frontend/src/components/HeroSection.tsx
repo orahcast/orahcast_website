@@ -32,72 +32,110 @@ export default function HeroSection() {
 
 
 
-      <div className="relative z-10 section-container w-full flex flex-col items-center text-center">
-        {/* Label pill */}
-        <div className="animate-fade-up inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#1313ec] animate-pulse" />
-          <span
-            className="text-xs font-mono font-bold tracking-widest uppercase"
-            style={{ color: "#1313ec" }}
-          >
-            Software Engineering Studio
-          </span>
+      <div className="relative z-10 section-container w-full max-w-[1200px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        {/* Left Content */}
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          {/* Label pill */}
+          <div className="animate-fade-up inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1313ec] animate-pulse" />
+            <span
+              className="text-xs font-mono font-bold tracking-widest uppercase"
+              style={{ color: "#1313ec" }}
+            >
+              Software Engineering Studio
+            </span>
+          </div>
+
+          {/* Main headline */}
+          <h1 className="animate-fade-up-delay-1 text-[clamp(2.4rem,5.5vw,4.2rem)] font-black leading-[1.1] tracking-tight mb-5 max-w-3xl">
+            <span style={{ color: "#1313ec" }}>Illuminating</span>{" "}
+            <span style={{ color: "#1313ec" }}>Data.</span>
+            <br />
+            <span className="font-semibold italic" style={{ color: "#94a3b8" }}>
+              Forecasting a
+            </span>{" "}
+            <span className="italic" style={{ color: "#64748b" }}>
+              Bright Future.
+            </span>
+          </h1>
+
+          {/* Description */}
+          <p className="animate-fade-up-delay-2 text-base md:text-lg text-neutral-500 max-w-xl leading-relaxed mb-10 font-body">
+            We build web &amp; mobile apps, AI solutions, cloud infrastructure,
+            and data systems — tailored for startups and enterprises ready to scale.
+          </p>
+
+          {/* CTA Row */}
+          <div className="animate-fade-up-delay-3 flex flex-wrap gap-4 items-center justify-center lg:justify-start">
+            <Link
+              href="#contact"
+              className="relative inline-flex items-center gap-2 bg-[#1313ec] hover:bg-[#0a0aaa] font-bold text-sm rounded-xl px-7 py-3 transition-all duration-200 overflow-hidden group"
+              style={{ boxShadow: "0 12px 40px -8px rgba(19,19,236,0.4)", color: "#ffffff" }}
+            >
+              <span className="relative z-10">Start a Project</span>
+              <svg
+                className="w-4 h-4 relative z-10 transition-transform duration-200 group-hover:translate-x-0.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
+            </Link>
+
+            <Link
+              href="#projects"
+              className="inline-flex items-center gap-2 text-neutral-600 hover:text-[#1313ec] font-semibold text-sm transition-colors duration-200 group"
+            >
+              View Our Work
+              <svg
+                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </div>
 
-        {/* Main headline */}
-        <h1 className="animate-fade-up-delay-1 text-[clamp(2.4rem,5.5vw,4.2rem)] font-black leading-[1.1] tracking-tight mb-5 max-w-3xl">
-          <span style={{ color: "#1313ec" }}>Illuminating</span>{" "}
-          <span style={{ color: "#1313ec" }}>Data.</span>
-          <br />
-          <span className="font-semibold italic" style={{ color: "#94a3b8" }}>
-            Forecasting a
-          </span>{" "}
-          <span className="italic" style={{ color: "#64748b" }}>
-            Bright Future.
-          </span>
-        </h1>
+        {/* Right Stats */}
+        <div className="relative flex flex-col justify-center w-full animate-fade-up-delay-3">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 bg-white/60 backdrop-blur-xl border border-neutral-100 p-8 lg:p-10 rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)]">
+            
+            {/* Stat 1 */}
+            <div className="flex flex-col">
+              <div className="text-xs font-bold tracking-widest text-neutral-400 uppercase mb-2">Experience</div>
+              <div className="text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-none mb-2">3<span className="text-[#1313ec]">+</span></div>
+              <div className="text-sm text-neutral-500 font-medium">Years in industry</div>
+            </div>
 
-        {/* Description */}
-        <p className="animate-fade-up-delay-2 text-base md:text-lg text-neutral-500 max-w-xl leading-relaxed mb-10 font-body">
-          We build web &amp; mobile apps, AI solutions, cloud infrastructure,
-          and data systems — tailored for startups and enterprises ready to scale.
-        </p>
+            {/* Stat 2 */}
+            <div className="flex flex-col">
+              <div className="text-xs font-bold tracking-widest text-neutral-400 uppercase mb-2">Delivered</div>
+              <div className="text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-none mb-2">20<span className="text-[#1313ec]">+</span></div>
+              <div className="text-sm text-neutral-500 font-medium">Projects completed</div>
+            </div>
 
-        {/* CTA Row */}
-        <div className="animate-fade-up-delay-3 flex flex-wrap gap-4 items-center justify-center">
-          <Link
-            href="#contact"
-            className="relative inline-flex items-center gap-2 bg-[#1313ec] hover:bg-[#0a0aaa] font-bold text-sm rounded-xl px-7 py-3 transition-all duration-200 overflow-hidden group"
-            style={{ boxShadow: "0 12px 40px -8px rgba(19,19,236,0.4)", color: "#ffffff" }}
-          >
-            <span className="relative z-10">Start a Project</span>
-            <svg
-              className="w-4 h-4 relative z-10 transition-transform duration-200 group-hover:translate-x-0.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
-          </Link>
+            {/* Stat 3 */}
+            <div className="flex flex-col">
+              <div className="text-xs font-bold tracking-widest text-neutral-400 uppercase mb-2">Happy Clients</div>
+              <div className="text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-none mb-2">98<span className="text-[#1313ec]">%</span></div>
+              <div className="text-sm text-neutral-500 font-medium">Retention rate</div>
+            </div>
 
-          <Link
-            href="#projects"
-            className="inline-flex items-center gap-2 text-neutral-600 hover:text-[#1313ec] font-semibold text-sm transition-colors duration-200 group"
-          >
-            View Our Work
-            <svg
-              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
+            {/* Stat 4 */}
+            <div className="flex flex-col">
+              <div className="text-xs font-bold tracking-widest text-neutral-400 uppercase mb-2">You Own</div>
+              <div className="text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-none mb-2">100<span className="text-[#1313ec]">%</span></div>
+              <div className="text-sm text-neutral-500 font-medium">domain &middot; code &middot; accounts</div>
+            </div>
+            
+          </div>
         </div>
       </div>
 
