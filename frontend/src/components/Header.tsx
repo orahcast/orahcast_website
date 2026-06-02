@@ -13,9 +13,9 @@ import { useState, useEffect } from "react";
 
 const NAV_LINKS = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
   { href: "#projects", label: "Projects" },
+  { href: "#about", label: "About" },
 ] as const;
 
 export default function Header() {
