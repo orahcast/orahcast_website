@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
+
 const PROJECTS = [
   {
     id: "blessedirembo",
@@ -25,13 +27,68 @@ const PROJECTS = [
     href: "",
     image: "/projects/sme-predictor.png",
   },
+  {
+    id: "guesthouse-management",
+    title: "Guesthouse Digital Management System",
+    description:
+      "A progressive web app (PWA) designed to automate payment tracking and reporting for family-run guesthouses. Replaces manual paper and SMS systems with a simple, real-time digital solution.",
+    href: "",
+    image: "/projects/guesthouse.png",
+  },
 ];
 
 export default function ProjectsSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setShowLeftArrow(scrollLeft > 5);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 5);
+    }
+  };
+
+  useEffect(() => {
+    const current = scrollRef.current;
+    if (current) {
+      current.addEventListener("scroll", checkScroll);
+      checkScroll();
+      
+      window.addEventListener("load", checkScroll);
+      window.addEventListener("resize", checkScroll);
+      
+      const timer = setTimeout(checkScroll, 500);
+      return () => {
+        current.removeEventListener("scroll", checkScroll);
+        window.removeEventListener("load", checkScroll);
+        window.removeEventListener("resize", checkScroll);
+        clearTimeout(timer);
+      };
+    }
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth * 0.8;
+      const scrollTo = direction === "left" 
+        ? scrollLeft - scrollAmount 
+        : scrollLeft + scrollAmount;
+      
+      scrollRef.current.scrollTo({
+        left: scrollTo,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
       id="projects"
       style={{ background: "#f0f4f8", paddingTop: "6rem", paddingBottom: "6rem" }}
+      className="overflow-hidden"
     >
       <div className="w-full max-w-[1200px] mx-auto px-6 lg:px-10">
 
@@ -56,11 +113,64 @@ export default function ProjectsSection() {
           </p>
         </div>
 
-        {/* ── Cards Grid ── */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        {/* ── Carousel Container ── */}
+        <div className="relative px-2">
+          {/* Left Arrow Button */}
+          {showLeftArrow && (
+            <button
+              onClick={() => scroll("left")}
+              className="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-12 h-12 rounded-full border border-neutral-200 bg-white text-neutral-800 shadow-lg transition-all duration-200 hover:bg-neutral-50 hover:scale-105 active:scale-95 focus:outline-none cursor-pointer"
+              aria-label="Previous projects"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          )}
+
+          {/* Right Arrow Button */}
+          {showRightArrow && (
+            <button
+              onClick={() => scroll("right")}
+              className="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-12 h-12 rounded-full border border-neutral-200 bg-white text-neutral-800 shadow-lg transition-all duration-200 hover:bg-neutral-50 hover:scale-105 active:scale-95 focus:outline-none cursor-pointer"
+              aria-label="Next projects"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
+
+          {/* Scrollable Area */}
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-7 pb-6 no-scrollbar scroll-smooth"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {PROJECTS.map((project) => (
+              <div
+                key={project.id}
+                className="w-[85vw] md:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)] flex-shrink-0 snap-start flex flex-col"
+              >
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -84,7 +194,7 @@ function ProjectCard({
 
   return (
     <article
-      className="flex flex-col overflow-hidden rounded-2xl group transition-all duration-300"
+      className="flex flex-col h-full overflow-hidden rounded-2xl group transition-all duration-300"
       style={{
         background: "#ffffff",
         boxShadow: "0 2px 16px 0 rgba(0,0,0,0.07)",
